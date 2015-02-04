@@ -3,6 +3,11 @@
 " .vimrc config https://www.youtube.com/watch?v=xZuy4gBghho
 " --------------------------------------------------------------------
 
+if exists('g:loaded_interestingwords')
+    finish
+endif
+let g:loaded_interestingwords = 1
+
 let s:interestingWordsGUIColors = ['#aeee00', '#ff0000', '#0000ff', '#b88823', '#ffa724', '#ff2c4b']
 let s:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
 
@@ -179,12 +184,12 @@ if !hasmapto('<Plug>InterestingWords')
 endif
 
 if g:interestingWordsDefaultMappings
-    nnoremap <silent> <unique> <script> <Plug>InterestingWords
-                \ :call InterestingWords()<cr>
-    nnoremap <silent> <unique> <script> <Plug>InterestingWordsClear
-                \ :call UncolorAllWords()<cr>
-    nnoremap <silent> <unique> <script> <Plug>InterestingWordsForeward
-                \ :call WordNavigation(1)<cr>
-    nnoremap <silent> <unique> <script> <Plug>InterestingWordsBackward
-                \ :call WordNavigation(0)<cr>
+	nnoremap <silent> <unique> <script> <Plug>InterestingWords
+				\ :call InterestingWords()<cr>
+	nnoremap <silent> <unique> <script> <Plug>InterestingWordsClear
+				\ :call UncolorAllWords()<cr>
+	nnoremap <silent> <unique> <script> <Plug>InterestingWordsForeward
+				\ :call WordNavigation(1)<cr>
+	nnoremap <silent> <unique> <script> <Plug>InterestingWordsBackward
+				\ :call WordNavigation(0)<cr>
 endif
